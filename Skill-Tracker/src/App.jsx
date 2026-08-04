@@ -1,13 +1,17 @@
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import AppRoutes from "./routes/AppRoutes";
 
-import './App.css'
 
 function App() {
   
 
   return (
-    <>
-      <h className="text-2xl text-amber-400 m-1">Skill</h>
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+      <AppRoutes />
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 
