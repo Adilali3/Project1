@@ -11,7 +11,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg-slate-800 border-b border-slate-700 px-6 py-3 flex justify-between items-center">
+    <nav className="bg-white/5 backdrop-blur-md border-b border-white/10 px-6 py-3 flex justify-between items-center">
       <span className="text-white font-semibold">SkillTrack</span>
       <button
         onClick={handleLogout}
