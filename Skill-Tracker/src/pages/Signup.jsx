@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {createUserWithEmailPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../firebase/config";
 import {useNavigate, Link} from "react-router-dom";
 
@@ -14,14 +14,14 @@ function Signup() {
         setError("");
 
         try {
-            await createUserWithEmailPassword (auth, email, password);
+            await createUserWithEmailAndPassword (auth, email, password);
             navigate("/dashboard");
         } catch (err) {
             setError(err.message);
         }
     }
     return (
-        <div className='min-h-screen bg-slate-900 flex items-center justify-center'>
+        <div className='min-h-screen bg-slate-900 flex items-center justify-center border-none'>
             <form
             onSubmit={handleSubmit}
             className='bg-slate-800 p-8 rounded-lg w-80 flex flex-col gap-4'
